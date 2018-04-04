@@ -1,1 +1,270 @@
-hiii
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="jumbotron text-center">
+  <h1>ụbụrụ</h1> 
+  <p>с языка <a href="https://ru.wikipedia.org/wiki/%D0%98%D0%B3%D0%B1%D0%BE_(%D1%8F%D0%B7%D1%8B%D0%BA)" class="link" title="Википедия - Игбо(язык)">игбо</a> – мозг или память</p> 
+  <!-- <form>
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Subscribe</button>
+      </div>
+    </div>
+  </form> -->
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      
+      <div class="row">
+      	<div class="col-md-6">
+      		<h2>О нас</h2>
+      		<h3>Мы - команда разработчиков.</h3>
+      		<h4>Наша команда – студенты МГТУ им. Н.Э. Баумана. Мы предоставляем открытые сервисы для нужд наших пользователей. Имеем опыт работы от сферы образования до интеллектуальных систем ухода за растениями.</h4>
+      		
+      	</div>
+      	  <div class="col-md-4">
+		      <p>Наша команда имеет опыт разработки в:</p>
+		      <ul class="list-group">
+			    <li class="list-group-item">Web</li>
+			    <li class="list-group-item">Telegram боты</li>
+			    <li class="list-group-item">Deep learning и анализ данных</li>
+			    <li class="list-group-item">Игры</li>
+			    <li class="list-group-item">Образование</li>
+			    
+			  </ul>
+		  </div>
+		  
+	  </div>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-info-sign logo"></span>
+    </div>
+  </div>
+</div>
+
+<div id="team" class="container-fluid">
+	<h2>Команда</h2>
+{% if teammates %}
+  {% for teammate in teammates %}
+  <div class="row">
+  	
+  	
+
+  	<div class="col-sm-4">
+      <span class="glyphicon glyphicon-star logo"></span>
+      <h3>{{teammate.full_name}}</h3>
+    </div>
+    <div class="col-sm-8">
+      <h4>{{teammate.short_description_bold}}</h4>
+      <p>{{teammate.short_description}}</p>
+      <button class="btn btn-default btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample{{teammate.id}}" aria-expanded="false" aria-controls="collapseExample{{teammate.id}}">
+	    Проекты
+	  	</button>
+
+	  <div class="collapse" id="collapseExample{{teammate.id}}">
+		  <div class="card card-body">
+		  	<br>
+		  	<ul class="list-group list-group-flush">
+		  		{% for project in teammate.projects %}
+  				<li class="list-group-item">{{project}}</li>
+  				{% endfor %}
+  
+			</ul>
+		    
+		  </div>
+	  </div>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+    {% else %}
+    <p>Вынужденно скрылась</p>  
+  
+{% endif %}
+</div>
+
+<!-- <div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>Сервисы</h2>
+  <h4>Что мы предлагаем</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-search logo-small"></span>
+      <h4>Умный поиск</h4>
+      <p>Поиск по тексту с помощью Deep Learning</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-cog logo-small"></span>
+      <h4>Парсинг Instagram</h4>
+      <p>Получение данных с Instagram без API</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-comment logo-small"></span>
+      <h4>Telegram боты</h4>
+      <p>Расписание, связка ключей, доставка пиццы и другие</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-record logo-small"></span>
+      <h4>Детектор <a href="http://philology.snauka.ru/2014/02/697">пауз хезитации</a></h4>
+      <p>Обнаружение нежелательных звуков и тренировка против их произношения</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-education logo-small"></span>
+      <h4>Образование</h4>
+      <p><a href="https://razborzadach.com/">Сайт</a> для подготовки к ГИА и ЕГЭ</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-screenshot logo-small"></span>
+      <h4 style="color:#303030;">Разработка игр</h4>
+      <p>Танковый биатлон, консольные стратегии и time-killer'ы</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Портфолио</h2><br>
+  <h4>Что мы создали</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        
+        <p><strong>Проект 1</strong></p>
+        <p>описание проекта 1</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <p><strong>Проект 2</strong></p>
+        <p>описание проекта 2</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <p><strong>Проект 3</strong></p>
+        <p>описание проекта 3</p>
+      </div>
+    </div>
+  </div><br>
+  
+  <h2>Отзывы наших пользователей</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Это поможет находить информацию быстрее..."<br><span>Об умном поиске, жюри конкурса проектов</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Я заметил, что стал меньше заикаться!"<br><span>Про детектор пауз хезитации, преподаватель <a href="https://goto.msk.ru/">IT-школы Goto</a></span></h4>
+      </div>
+      <div class="item">
+        <h4>"Спасибо, помогли решить задачу!"<br><span>Пользователи на <a href="https://razborzadach.com/">сайте</a></span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Туда</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Сюда</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Цены</h2>
+    <h4>Выберете подходящий вам тариф</h4>
+  </div>
+  <div class="row slideanim">
+      
+    <div class="col-sm-4 col-xs-12">     
+    </div>   
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Бесплатно</h1>
+        </div>
+        <div class="panel-body">
+          <p><b>Все</b> наши <i>open source</i> проекты </p>
+          <p>доступны бесплатно на нашем <a href="https://github.com/uburu" title="uburu github">github</a> </p>
+          
+        </div>
+        <div class="panel-footer">
+          <h3>Бесплатно</h3>
+          <h4>Навсегда</h4>
+          <a class="btn btn-lg" role="button" href="https://github.com/uburu" >Github</a>
+          
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12"></div>    
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">Контакты</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Напишите нам и мы свяжемся в течении суток.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Москва, Россия</p>
+      <p><span class="glyphicon glyphicon-phone"></span> <a href="tel:+7(916)-108-42-01">+7(916)-108-42-01</a></p>
+      <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:nikita.rub@yandex.ru">nikita.rub@yandex.ru</a></p>
+    </div>
+    <!-- <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+
+{% endblock %}
