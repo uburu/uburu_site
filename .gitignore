@@ -99,3 +99,20 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Secret
+*secret*
+secret_settings.py
+
+# Static sources
+img/
+
+
+# Bootstrap
+.min.css
+.min.js
+
+# Json
+.json
+
+
