@@ -105,7 +105,11 @@ ENV/
 secret_settings.py
 
 # Static sources
-img/
+/Img
+.jpeg
+.png
+.gif
+.jpg
 
 
 # Bootstrap
