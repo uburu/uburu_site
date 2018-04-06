@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+  
   <style>
   body {
       font: 400 15px Lato, sans-serif;
@@ -123,14 +123,16 @@
       background-color: #4ce774;
       z-index: 9999;
       border: 0;
-      font-size: 12px !important;
+      font-size: 13px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;
-      font-family: Montserrat, sans-serif;
+      /*font-family: Play, sans-serif;*/
+
   }
   .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
+      font-size:20px !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #4ce774 !important;
@@ -208,7 +210,7 @@
 	        <li><a href="#about">О нас</a></li>
 	        <li><a href="#team">Команда</a></li>
 	        <li><a href="#services">Сервисы</a></li>
-	        <li><a href="#portfolio">Портфолио</a></li>
+	        <!-- <li><a href="#portfolio">Портфолио</a></li> -->
 	        <li><a href="#pricing">Цены</a></li>
 	        <li><a href="#contact">Контакты</a></li>
 	      </ul>
@@ -220,25 +222,6 @@
 	{% block content %} 
     {% endblock %}
 </main>
-
-<!-- Add Google Maps -->
-<!--
-<div id="googleMap" style="height:400px;width:100%;"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
 	<footer class="container-fluid text-center">
 	  <a href="#Page" title="To Top">
 	    <span class="glyphicon glyphicon-chevron-up"></span>
@@ -246,42 +229,9 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 	  <p>Команда ụbụrụ. Наш <a href="https://github.com/uburu" title="uburu github">github</a> (обновляется)</p>
 	</footer>
 
-	<script>
-	$(document).ready(function(){
-	  // Add smooth scrolling to all links in navbar + footer link
-	  $(".navbar a, footer a[href='#Page']").on('click', function(event) {
-	    // Make sure this.hash has a value before overriding default behavior
-	    if (this.hash !== "") {
-	      // Prevent default anchor click behavior
-	      event.preventDefault();
-
-	      // Store hash
-	      var hash = this.hash;
-
-	      // Using jQuery's animate() method to add smooth page scroll
-	      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-	      $('html, body').animate({
-	        scrollTop: $(hash).offset().top
-	      }, 900, function(){
-	   
-	        // Add hash (#) to URL when done scrolling (default click behavior)
-	        window.location.hash = hash;
-	      });
-	    } // End if
-	  });
-	  
-	  $(window).scroll(function() {
-	    $(".slideanim").each(function(){
-	      var pos = $(this).offset().top;
-
-	      var winTop = $(window).scrollTop();
-	        if (pos < winTop + 600) {
-	          $(this).addClass("slide");
-	        }
-	    });
-	  });
-	})
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/static/js/uburu_card.js"></script>
 
 	
 </body>
